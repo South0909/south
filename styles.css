@@ -49,16 +49,32 @@ tr:nth-child(even) {
 }
 footer {
     text-align: center; /* Tekst in het midden */
-    padding: 10px; /* Ruimte rondom de tekst */
-    position: fixed; /* Footer blijft onderaan de pagina */
-    bottom: 0; /* Zorgt ervoor dat de footer helemaal onderaan zit */
-    width: 100%; /* De footer neemt de volledige breedte in */
-    background: none; /* Geen achtergrondkleur voor de footer zelf */
+    padding: 10px;
+    position: fixed; /* Zorg dat de footer onderaan blijft */
+    bottom: 0;
+    width: 100%;
+    background: none; /* Geen achtergrondkleur */
 }
 
 footer p {
-    color: #FF5733; /* Kies een opvallende kleur voor de tekst (oranje-rood) */
-    font-size: 16px; /* Maak de tekst iets groter */
-    font-weight: bold; /* Maak de tekst vetgedrukt */
-    margin: 0; /* Geen extra marge */
+    color: #FF5733; /* Opvallende oranje-rode kleur */
+    font-size: 25px; /* Tekstgrootte */
+    font-weight: bold; /* Vetgedrukt */
+    margin: 0;
+    display: inline-block; /* Noodzakelijk voor animatie */
+    animation: moveLeftRight 5s linear infinite; /* Animatie toevoegen */
 }
+
+/* De animatie definitie */
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(-50%); /* Begin links */
+    }
+    50% {
+        transform: translateX(50%); /* Middenpunt rechts */
+    }
+    100% {
+        transform: translateX(-50%); /* Terug naar links */
+    }
+}
+
